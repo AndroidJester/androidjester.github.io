@@ -2,7 +2,7 @@
 title: Go Starter
 description: A starter guide on using Go for whatever fancies your heart
 date: 2023-09-07T22:20:32Z
-image: https://www.gravatar.com/avatar/24a44e8bc08cd0c6e2fd43378eeb25b2?s=192&d=identicon&r=PG&f=y&so-version=2
+# image: https://www.gravatar.com/avatar/24a44e8bc08cd0c6e2fd43378eeb25b2?s=192&d=identicon&r=PG&f=y&so-version=2
 math: false
 tags:
   - Tutorial
