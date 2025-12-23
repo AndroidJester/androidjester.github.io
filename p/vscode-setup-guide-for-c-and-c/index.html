@@ -1,0 +1,424 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="Guide for helping beginner in C and C++"><title>VSCode Setup Guide for C and C++</title><link rel=canonical href=https://androidjester.github.io/p/vscode-setup-guide-for-c-and-c/><link rel=stylesheet href=/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css><meta property='og:title' content="VSCode Setup Guide for C and C++"><meta property='og:description' content="Guide for helping beginner in C and C++"><meta property='og:url' content='https://androidjester.github.io/p/vscode-setup-guide-for-c-and-c/'><meta property='og:site_name' content="AndroidJester's Blog"><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Tutorial'><meta property='article:tag' content='Guide'><meta property='article:tag' content='C'><meta property='article:tag' content='C++'><meta property='article:published_time' content='2023-09-07T22:20:32+00:00'><meta property='article:modified_time' content='2023-09-07T22:20:32+00:00'><meta name=twitter:title content="VSCode Setup Guide for C and C++"><meta name=twitter:description content="Guide for helping beginner in C and C++"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src="https://avatars.githubusercontent.com/u/46320020?v=4" width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🍥</span></figure><div class=site-meta><h1 class=site-name><a href=/>AndroidJester's Blog</a></h1><h2 class=site-description>Sharing any form of learning along the way</h2></div></header><ol class=menu-social><li><a href=https://github.com/AndroidJester target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com/android_jester target=_blank title=Twitter rel=me><svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li class=current><a href=/post/><svg width="800" height="800" viewBox="0 0 24 24" fill="none"><path d="M12 10.4V20m0-9.6c0-2.24021.0-3.36031-.436-4.21596-.3835-.75265-.9954-1.36457-1.74804-1.74807C8.96031 4 7.84021 4 5.6 4h-1c-.56005.0-.84008.0-1.05399.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601 3 4.75992 3 5.03995 3 5.6V16.4C3 16.9601 3 17.2401 3.10899 17.454 3.20487 17.6422 3.35785 17.7951 3.54601 17.891 3.75992 18 4.03995 18 4.6 18H7.54668C8.08687 18 8.35696 18 8.61814 18.0466 8.84995 18.0879 9.0761 18.1563 9.29191 18.2506 9.53504 18.3567 9.75977 18.5065 10.2092 18.8062L12 20m0-9.6c0-2.24021.0-3.36031.436-4.21596.3835-.75265.9954-1.36457 1.748-1.74807C15.0397 4 16.1598 4 18.4 4h1C19.9601 4 20.2401 4 20.454 4.10899 20.6422 4.20487 20.7951 4.35785 20.891 4.54601 21 4.75992 21 5.03995 21 5.6V16.4C21 16.9601 21 17.2401 20.891 17.454 20.7951 17.6422 20.6422 17.7951 20.454 17.891 20.2401 18 19.9601 18 19.4 18H16.4533C15.9131 18 15.643 18 15.3819 18.0466 15.15 18.0879 14.9239 18.1563 14.7081 18.2506 14.465 18.3567 14.2402 18.5065 13.7908 18.8062L12 20" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span>Blogs</span></a></li><li><a href=/categories/><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+<span>Categories</span></a></li><li><a href=/projects/><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+<span>Projects</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/about-me/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About Me</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#what-is-an-lsp>What is an LSP?</a></li><li><a href=#clangd-setup-on-vscode>Clangd Setup on VSCode</a></li><li><a href=#linux-setup>Linux Setup</a><ol><li><a href=#building-the-project>Building the project</a></li></ol></li><li><a href=#windows-setup>Windows Setup</a><ol><li><a href=#msys2-mingw>MSYS2 MINGW</a></li><li><a href=#clangd-installation>Clangd Installation</a></li><li><a href=#vscode-setup>VSCode setup</a></li><li><a href=#conan-and-code>Conan and Code</a></li><li><a href=#build-and-compile>Build and compile</a></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/systems-development/ style=background-color:#2a9d8f;color:#fff>Systems Development</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/vscode-setup-guide-for-c-and-c/>VSCode Setup Guide for C and C++</a></h2><h3 class=article-subtitle>Guide for helping beginner in C and C++</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2023-09-07T22:20:32Z>Sep 07, 2023</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>9 minute read</time></div></footer></div></header><section class=article-content><p>As Visual Studio Code is one of the most used code editor, beginner in C and C++ programming have difficulty setting up this editor for C and C++ programming</p><p>Here I would like to help by setting up VSCode with Clangd</p><p>Clangd is an LSP that helps coding in C or C++ a easier</p><p>We would be setting up our C project for writing a simple window using the GTK libraries</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>// main.c
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;gtk/gtk.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>static</span> <span class=kt>void</span> <span class=nf>activate</span><span class=p>(</span><span class=n>GtkApplication</span> <span class=o>*</span><span class=n>app</span><span class=p>,</span> <span class=n>gpointer</span> <span class=n>user_data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=n>GtkWidget</span> <span class=o>*</span><span class=n>window</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=n>GtkWidget</span> <span class=o>*</span><span class=n>label</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>window</span> <span class=o>=</span> <span class=nf>gtk_application_window_new</span><span class=p>(</span><span class=n>app</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=n>label</span> <span class=o>=</span> <span class=nf>gtk_label_new</span><span class=p>(</span><span class=s>&#34;Hello GNOME!&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nf>gtk_container_add</span><span class=p>(</span><span class=nf>GTK_CONTAINER</span><span class=p>(</span><span class=n>window</span><span class=p>),</span> <span class=n>label</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nf>gtk_window_set_title</span><span class=p>(</span><span class=nf>GTK_WINDOW</span><span class=p>(</span><span class=n>window</span><span class=p>),</span> <span class=s>&#34;Welcome to GNOME&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nf>gtk_window_set_default_size</span><span class=p>(</span><span class=nf>GTK_WINDOW</span><span class=p>(</span><span class=n>window</span><span class=p>),</span> <span class=mi>400</span><span class=p>,</span> <span class=mi>200</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nf>gtk_widget_show_all</span><span class=p>(</span><span class=n>window</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(</span><span class=kt>int</span> <span class=n>argc</span><span class=p>,</span> <span class=kt>char</span> <span class=o>**</span><span class=n>argv</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=n>GtkApplication</span> <span class=o>*</span><span class=n>app</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>status</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>app</span> <span class=o>=</span> <span class=nf>gtk_application_new</span><span class=p>(</span><span class=nb>NULL</span><span class=p>,</span> <span class=n>G_APPLICATION_FLAGS_NONE</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nf>g_signal_connect</span><span class=p>(</span><span class=n>app</span><span class=p>,</span> <span class=s>&#34;activate&#34;</span><span class=p>,</span> <span class=nf>G_CALLBACK</span><span class=p>(</span><span class=n>activate</span><span class=p>),</span> <span class=nb>NULL</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=n>status</span> <span class=o>=</span> <span class=nf>g_application_run</span><span class=p>(</span><span class=nf>G_APPLICATION</span><span class=p>(</span><span class=n>app</span><span class=p>),</span> <span class=n>argc</span><span class=p>,</span> <span class=n>argv</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nf>g_object_unref</span><span class=p>(</span><span class=n>app</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>status</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>This code is from the mesonbuild #<a class=link href=https://mesonbuild.com/Tutorial.html target=_blank rel=noopener>site</a> which is the build system we would be using for the project</p><h2 id=what-is-an-lsp>What is an LSP?</h2><p>An LSP(Language Server Protocol) is a program that looks through your code for syntax errors and in some cases linting errors depending on the linter provided</p><h2 id=clangd-setup-on-vscode>Clangd Setup on VSCode</h2><p>First we would need the Clangd extension as well as the LSP itself
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zfmp451goqc14wlb2t8f.png loading=lazy alt="Clangd extension">
+You can download the extension from #<a class=link href="https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd" target=_blank rel=noopener>here</a>
+The extension provides its own Clangd LSP but in case of issues with that we would like to download and setup the clangd package from the official <a class=link href=https://clangd.llvm.org/installation target=_blank rel=noopener>site</a> for both <a class=link href=https://github.com/clangd/clangd/releases target=_blank rel=noopener>Windows and Linux</a></p><h2 id=linux-setup>Linux Setup</h2><p>We can download and install the clangd LSP using the available package manager and installer like <code>apt</code> for Debian/Ubuntu, <code>dnf</code> or <code>yum</code> for Red Hat distributions and <code>pacman</code> or <code>yay</code> for Arch</p><ul><li>I use Arch so the command I am more familar with is <code>yay</code></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yay -S clangd-opt <span class=c1># This downloads and builds the latest clangd available from the Arch User Repository</span>
+</span></span></code></pre></td></tr></table></div></div><p>Then inside our VSCode settings we set path to where our clangd would be located
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fjmh9lm4uvwrgz3egidf.png loading=lazy alt=Settings></p><p>We try to find the path to clangd using <code>whereis clangd</code> or <code>which clangd</code>
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4idok18cr0m2stow0vf4.png loading=lazy alt="Clangd path"></p><h3 id=building-the-project>Building the project</h3><p>Clangd would work for most cases however when involving non-standard libraries like our GTK library, we would start to see a lot of errors
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r4ip5ijdyvlzxmmu7h2p.png loading=lazy alt="Clangd fails to locate GTK.h"></p><p>First we need to know if the library&rsquo;s files are available, we can download them and include them to our project but to make this short we would just use pkg-config and grep command to find the necessary GTK+ library for our little demo which I have installed in my system
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yv79cf4f2uw2wfvlcmx4.png loading=lazy alt="GTK finding"></p><p>Then we would include this as a dependency to our project through our build tool such as make, CMake or Meson, we would be using meson which is simpler and easy to use.</p><p>So we install meson using our package manager</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo pacman -S meson
+</span></span></code></pre></td></tr></table></div></div><p>We setup our meson.build with the project, this lays out the project for compilation</p><p>We write the following code for our demo&rsquo;s <code>meson.build</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-meson data-lang=meson><span class=line><span class=cl><span class=nb>project</span><span class=p>(</span><span class=s>&#39;demo&#39;</span><span class=p>,</span><span class=w> </span><span class=s>&#39;c&#39;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>gtk</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>dependency</span><span class=p>(</span><span class=s>&#39;gtk+-3.0&#39;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nb>executable</span><span class=p>(</span><span class=s>&#39;demo&#39;</span><span class=w> </span><span class=s>&#39;main.c&#39;</span><span class=p>,</span><span class=w> </span><span class=n>dependencies</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=n>gtk</span><span class=p>])</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>What our <code>meson.build</code> file will tell the build system is that our project name is demo and it uses the C programming language we have included the gtk+-3.0 as a dependency and we would build an executable with the name demo from our main.c file</p><p>This generates the necessary files and parameters for our compilation</p><p>A json file with that name <code>compile_commands.json</code> is generated and allows us to quickly use our build system to compile our code, this is also needed by clangd to know our dependency files</p><p>In our project directory, we setup our build folder using meson but we would need our compile_commands.json to be within the root of the project for clangd to work properly with so we download <code>bear</code> for that purpose and use it along meson to get our compile_commands.json</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-zsh data-lang=zsh><span class=line><span class=cl>sudo pacman -S bear
+</span></span><span class=line><span class=cl>bear -- meson setup build
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iryf88ujd2zgxpnzprix.png loading=lazy alt="Meson Works"></p><p>With that done our compile_commands.json would contain the following code</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>[</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;arguments&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;/usr/bin/cc&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-D_FILE_OFFSET_BITS=64&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-o&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;sanitycheckc.exe&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;sanitycheckc.c&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>],</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;directory&#34;</span><span class=p>:</span> <span class=s2>&#34;/home/android-jester/Documents/learning-concepts/c/demo/build/meson-private&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;file&#34;</span><span class=p>:</span> <span class=s2>&#34;/home/android-jester/Documents/learning-concepts/c/demo/build/meson-private/sanitycheckc.c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;output&#34;</span><span class=p>:</span> <span class=s2>&#34;/home/android-jester/Documents/learning-concepts/c/demo/build/meson-private/sanitycheckc.exe&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>This however doesn&rsquo;t contain the include files for that we need to compile our project using meson</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>bear -- meson compile -C build
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rx58ocjxioj3wqjeon4x.png loading=lazy alt="Meson Compile"></p><p>Funny to say there is some depreciated code in the source file but it will work out</p><p>With that done our compile_commands.json look like this</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>[</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;arguments&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;/usr/bin/cc&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-Idemo.p&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I.&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I..&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/gtk-3.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/pango-1.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/glib-2.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/lib/glib-2.0/include&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/sysprof-4&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/harfbuzz&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/freetype2&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/libpng16&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/libmount&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/blkid&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/fribidi&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/cairo&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/pixman-1&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/gdk-pixbuf-2.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/gio-unix-2.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/cloudproviders&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/atk-1.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/at-spi2-atk/2.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/at-spi-2.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/include/dbus-1.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-I/usr/lib/dbus-1.0/include&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-fdiagnostics-color=always&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-D_FILE_OFFSET_BITS=64&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-Wall&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-Winvalid-pch&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-O0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-g&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-pthread&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;-o&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;demo.p/main.c.o&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=s2>&#34;../main.c&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>],</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;directory&#34;</span><span class=p>:</span> <span class=s2>&#34;/home/android-jester/Documents/learning-concepts/c/demo/build&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;file&#34;</span><span class=p>:</span> <span class=s2>&#34;/home/android-jester/Documents/learning-concepts/c/demo/main.c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;output&#34;</span><span class=p>:</span> <span class=s2>&#34;/home/android-jester/Documents/learning-concepts/c/demo/build/demo.p/main.c.o&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>This shows how my code with compile using the gcc compiler installed on my system, I can change anything in this file manually but more importantly we need to see if the clangd extension has recognized our header files</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/belx29txgwsvy9jyqgbx.png loading=lazy alt="No Errors"></p><p>As we can see the error lines are gone and we can run our executable in the build folder</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>./build/demo
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vvaqn1blbzib3vj7xbp1.png loading=lazy alt="GNOME Window"></p><h2 id=windows-setup>Windows Setup</h2><h3 id=msys2-mingw>MSYS2 MINGW</h3><p>On Windows, we would use MSYS2 MINGW to setup our environment by installing the GNU GCC compiler and Meson build tool</p><p>We can download MSYS2 installer from <a class=link href=https://www.msys2.org/ target=_blank rel=noopener>here</a></p><p>After going through the installation process, we would have the mingw64 msys2 terminal available.</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9w6mf4egkge5nfvfrj7j.png loading=lazy alt="MSYS2 MINGW64 Installed"></p><h3 id=clangd-installation>Clangd Installation</h3><p>Afterward install clangd from the clang-tools-extra inside bash from mingw64</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pacman -S mingw-w64-x86_64-clang-tools-extra
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/074tstlxbsqvrf0kmuwl.png loading=lazy alt="Clang-tools-extra installation"></p><p>The tools are a lot bigger on the Windows side because it also contains the needed gcc compiler and libraries, Clang compiler and libraries and other tools</p><p>With that we can find the clangd using <code>whereis clangd</code>
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q10h37yv4bk5a1qaxgzj.png loading=lazy alt="Whereis Clangd"></p><h3 id=vscode-setup>VSCode setup</h3><p>In VSCode, after installing the clangd extension, we can either use the bundled clangd downloaded from the extension or we can link it to our clangd installed from msys2 mingw64</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixgtol1w0avcgbdo5621.png loading=lazy alt="Clangd in VSCode"></p><p>In VSCode, we can add the following in our user&rsquo;s <code>settings.json</code> which contains all our user settings.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;terminal.integrated.profiles.windows&#34;</span><span class=err>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;MSYS2&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=s2>&#34;cmd.exe&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;args&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>			<span class=s2>&#34;/c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=s2>&#34;C:\\msys64\\msys2_shell.cmd -defterm -here -no-start -mingw64 -use-full-path&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=p>},</span>
+</span></span><span class=line><span class=cl>	<span class=err>...</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=conan-and-code>Conan and Code</h3><p>Before we start to code we would need to easily download and use some external libraries
+Using the guide from <a class=link href=https://conan.io/downloads.html target=_blank rel=noopener>Conan, C++ Open Source Package Manager</a>, We can setup conan for msys2 mingw-w64</p><p>With conan executable setup we need to create our <code>conanfile.txt</code> for our project</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>requires</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>zlib</span><span class=err>/</span><span class=mf>1.2</span><span class=p>.</span><span class=mi>13</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>generators</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>PkgConfigDeps</span>
+</span></span><span class=line><span class=cl><span class=nx>MesonToolchain</span>
+</span></span></code></pre></td></tr></table></div></div><p>We are simply importing zlib from the conan package center where we can download the needed libraries and generate a native file for our meson</p><p>For Windows GTK doesn&rsquo;t work as expected thus we would go for a command line compression tool <code>zlib</code> so inside our <code>meson.build</code> file we include the following</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-meson data-lang=meson><span class=line><span class=cl><span class=nb>project</span><span class=p>(</span><span class=s>&#39;demo&#39;</span><span class=p>,</span><span class=w> </span><span class=s>&#39;c&#39;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>zlib</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>dependency</span><span class=p>(</span><span class=s>&#39;zlib&#39;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nb>executable</span><span class=p>(</span><span class=s>&#39;demo&#39;</span><span class=p>,</span><span class=w> </span><span class=s>&#39;main.c&#39;</span><span class=p>,</span><span class=w> </span><span class=n>dependencies</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=n>zlib</span><span class=p>])</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>And in our project contains our code</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>//main.c
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdlib.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;string.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;zlib.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>char</span> <span class=n>buffer_in</span> <span class=p>[</span><span class=mi>256</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=s>&#34;A simple string we want to compress, don&#39;t worry about the detail just let the library do its thing we will also try to print out the version of ZLIB to show that it works&#34;</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>char</span> <span class=n>buffer_out</span> <span class=p>[</span><span class=mi>256</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>// Just deflation or compression
+</span></span></span><span class=line><span class=cl>    <span class=n>z_stream</span> <span class=n>defstream</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>zalloc</span> <span class=o>=</span> <span class=n>Z_NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>zfree</span> <span class=o>=</span> <span class=n>Z_NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>opaque</span> <span class=o>=</span> <span class=n>Z_NULL</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>avail_in</span> <span class=o>=</span> <span class=p>(</span><span class=n>uInt</span><span class=p>)</span> <span class=nf>strlen</span><span class=p>(</span><span class=n>buffer_in</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>next_in</span> <span class=o>=</span> <span class=p>(</span><span class=n>Bytef</span> <span class=o>*</span><span class=p>)</span> <span class=n>buffer_in</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>avail_out</span> <span class=o>=</span> <span class=p>(</span><span class=n>uInt</span><span class=p>)</span> <span class=k>sizeof</span><span class=p>(</span><span class=n>buffer_out</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>defstream</span><span class=p>.</span><span class=n>next_out</span> <span class=o>=</span> <span class=p>(</span><span class=n>Bytef</span> <span class=o>*</span><span class=p>)</span> <span class=n>buffer_out</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=nf>deflateInit</span><span class=p>(</span><span class=o>&amp;</span><span class=n>defstream</span><span class=p>,</span> <span class=n>Z_BEST_COMPRESSION</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>deflate</span><span class=p>(</span><span class=o>&amp;</span><span class=n>defstream</span><span class=p>,</span> <span class=n>Z_FINISH</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nf>deflateEnd</span><span class=p>(</span><span class=o>&amp;</span><span class=n>defstream</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>	<span class=c1>// Printing out the compression details
+</span></span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Uncompressed size is: %lu</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=nf>strlen</span><span class=p>(</span><span class=n>buffer_in</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Compressed size is: %lu</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=nf>strlen</span><span class=p>(</span><span class=n>buffer_out</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;ZLIB VERSION: %s</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=nf>zlibVersion</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>EXIT_SUCCESS</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=build-and-compile>Build and compile</h3><p>Bear is the program we used in linux to copy our <code>compile_commands.json</code> from our build folder however I cannot easily find a prebuilt executable for Windows thus we would manually copy the <code>compile_commands.json</code> from the build folder</p><p>First we setup the build by getting our dependencies</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>conan install . --output-folder<span class=o>=</span>build --build<span class=o>=</span>missing
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n7f2nrl030xc7hksqw49.png loading=lazy alt="Conan Downloading the needed files"></p><p>This generates a build folder which contains the files necessary to build our project using meson</p><p>We use meson and the native meson file generated from the build folder <code>conan</code> generated to create our own build folder</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>meson setup &lt;build-folder-name&gt; --native-file build/conan_meson_native.ini
+</span></span></code></pre></td></tr></table></div></div><p>However you might approach an error like this</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkei7xlv8ic0z2mvi9ig.png loading=lazy alt="No such compiler found"></p><p>We can fix that error by simply changing the compiler used to use our gcc compiler included in out clang-tools-extra in our <code>build/conan_meson_native.ini</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ini data-lang=ini><span class=line><span class=cl><span class=k>[properties]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>[constants]</span>
+</span></span><span class=line><span class=cl><span class=na>preprocessor_definitions</span> <span class=o>=</span> <span class=s>[]</span>
+</span></span><span class=line><span class=cl><span class=c1># Constants to be overridden by conan_meson_deps_flags.ini (if exists)</span>
+</span></span><span class=line><span class=cl><span class=na>deps_c_args</span> <span class=o>=</span> <span class=s>[]</span>
+</span></span><span class=line><span class=cl><span class=na>deps_c_link_args</span> <span class=o>=</span> <span class=s>[]</span>
+</span></span><span class=line><span class=cl><span class=na>deps_cpp_args</span> <span class=o>=</span> <span class=s>[]</span>
+</span></span><span class=line><span class=cl><span class=na>deps_cpp_link_args</span> <span class=o>=</span> <span class=s>[]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>[project options]</span>
+</span></span><span class=line><span class=cl><span class=na>wrap_mode</span> <span class=o>=</span> <span class=s>&#39;nofallback&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>bindir</span> <span class=o>=</span> <span class=s>&#39;bin&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>sbindir</span> <span class=o>=</span> <span class=s>&#39;bin&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>libexecdir</span> <span class=o>=</span> <span class=s>&#39;bin&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>includedir</span> <span class=o>=</span> <span class=s>&#39;include&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>libdir</span> <span class=o>=</span> <span class=s>&#39;lib&#39;
+</span></span></span><span class=line><span class=cl><span class=s>  </span>
+</span></span><span class=line><span class=cl><span class=k>[binaries]</span>
+</span></span><span class=line><span class=cl><span class=c1># c = &#39;cl&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1># cpp = &#39;cl&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1># The compiler binary names</span>
+</span></span><span class=line><span class=cl><span class=na>c</span> <span class=o>=</span> <span class=s>&#39;gcc&#39; </span>
+</span></span><span class=line><span class=cl><span class=na>cpp</span> <span class=o>=</span> <span class=s>&#39;gcc&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>[built-in options]</span>
+</span></span><span class=line><span class=cl><span class=na>buildtype</span> <span class=o>=</span> <span class=s>&#39;release&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>b_vscrt</span> <span class=o>=</span> <span class=s>&#39;md&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>b_ndebug</span> <span class=o>=</span> <span class=s>&#39;true&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>cpp_std</span> <span class=o>=</span> <span class=s>&#39;vc++14&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>backend</span> <span class=o>=</span> <span class=s>&#39;ninja&#39;</span>
+</span></span><span class=line><span class=cl><span class=na>pkg_config_path</span> <span class=o>=</span> <span class=s>&#39;C:\Users\Android-Jester\Documents\learning-concepts\C\demo\build&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># C/C++ arguments</span>
+</span></span><span class=line><span class=cl><span class=na>c_args</span> <span class=o>=</span> <span class=s>[] + preprocessor_definitions + deps_c_args</span>
+</span></span><span class=line><span class=cl><span class=na>c_link_args</span> <span class=o>=</span> <span class=s>[] + deps_c_link_args</span>
+</span></span><span class=line><span class=cl><span class=na>cpp_args</span> <span class=o>=</span> <span class=s>[] + preprocessor_definitions + deps_cpp_args</span>
+</span></span><span class=line><span class=cl><span class=na>cpp_link_args</span> <span class=o>=</span> <span class=s>[] + deps_cpp_link_args</span>
+</span></span></code></pre></td></tr></table></div></div><p>Finally our build would be completed
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p5dvbnr2y3d7sdb1s7jf.png loading=lazy alt="Build Complete"></p><p>The compile_commands.json file which clangd needs is inside the builddir so we can easily copy it to the root directory, it might contains the following</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>[</span>
+</span></span><span class=line><span class=cl>	<span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;directory&#34;</span><span class=p>:</span> <span class=s2>&#34;/c/Users/Android-Jester/Documents/learning-concepts/C/demo/builddir&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;command&#34;</span><span class=p>:</span> <span class=s2>&#34;\&#34;gcc\&#34; \&#34;-Idemo.exe.p\&#34; \&#34;-I.\&#34; \&#34;-I..\&#34; \&#34;-fdiagnostics-color=always\&#34; \&#34;-DNDEBUG\&#34; \&#34;-D_FILE_OFFSET_BITS=64\&#34; \&#34;-Wall\&#34; \&#34;-Winvalid-pch\&#34; \&#34;-O3\&#34; -MD -MQ demo.exe.p/main.c.obj -MF \&#34;demo.exe.p\\main.c.obj.d\&#34; -o demo.exe.p/main.c.obj \&#34;-c\&#34; ../main.c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	    <span class=nt>&#34;file&#34;</span><span class=p>:</span> <span class=s2>&#34;../main.c&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	    <span class=nt>&#34;output&#34;</span><span class=p>:</span> <span class=s2>&#34;demo.exe.p/main.c.obj&#34;</span>
+</span></span><span class=line><span class=cl>	  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>This includes all the library files needed thus we can compile our code and run it to see the result</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>meson compile -C &lt;build-folder-name&gt;
+</span></span></code></pre></td></tr></table></div></div><p>And VSCode can recognize our zlib header file
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zymklchi26xq9ao7lg1y.png loading=lazy alt="Clangd works"></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r6iqmytahujzsay4w1aw.png loading=lazy alt="Compiled and running"></p><p>I hope this was a short and informative guide as this is my first post, please if there are any issues or suggestions for improvements with the process, please let me know in the comments</p></section><footer class=article-footer><section class=article-tags><a href=/tags/tutorial/>Tutorial</a>
+<a href=/tags/guide/>Guide</a>
+<a href=/tags/c/>C</a>
+<a href=/tags/c++/>C++</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/p/go-starter/><div class=article-details><h2 class=article-title>Go Starter</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2023 -
+2025 AndroidJester's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.33.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
