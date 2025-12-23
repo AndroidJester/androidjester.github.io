@@ -44,7 +44,7 @@ jobs:
                    submodules: recursive
 
             - name: Build
-              run: hugo build
+              run: hugo --minify --gc
 
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@v4
